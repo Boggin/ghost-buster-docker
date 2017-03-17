@@ -1,3 +1,2 @@
 FROM python:2
-RUN pip install buster
-
+RUN pip install git+https://github.com/boggin/buster
