@@ -1,22 +1,22 @@
-version: '2.1'
-
-services:
+version: '3'
+services:  
   ghost:
-    image: ghost:0.11.7
+    image: ghost:latest
     volumes:
       - ./content:/var/lib/ghost
     ports:
       - 2368:2368
-
   buster:
-    image: stefanscherer/buster
+    image: unsettling/buster
+    build:
+      context: ./buster
+      dockerfile: Dockerfile
     command: /buster.sh
     volumes:
       - ./static:/static
       - ./buster.sh:/buster.sh
-
   preview:
-    image: nginx
+    image: nginx:alpine
     volumes:
       - ./static:/usr/share/nginx/html:ro
     ports:
