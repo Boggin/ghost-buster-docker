@@ -7,7 +7,7 @@ services:
     ports:
       - 2368:2368
   buster:
-    image: unsettling/buster
+    image: unsettling/buster:latest
     build:
       context: ./buster
       dockerfile: Dockerfile
